@@ -1,5 +1,4 @@
 package p1;
-
 public class MyArrayList implements MyList {
 	//Fields
 	private Object[] Stuff;
@@ -30,7 +29,16 @@ public class MyArrayList implements MyList {
 	//returns true if the list contains the given object, should return false if null is inputted.
 
 	public boolean contains(Object o){
-		
+			int check = 0;
+			while (check <+ Stuff.length-1){
+				if (Stuff[check] == o){
+					return true;
+				}
+				else{
+					check ++;
+				}
+			}
+			return false;
 	}
 
 	    
@@ -38,7 +46,12 @@ public class MyArrayList implements MyList {
 	//returns the object at the given index, return null if the given index is out of bounds.
 
 	public Object get(int index){
-		
+		if ( index > Stuff.length){
+			return null;
+		}
+		else{
+			return Stuff[index];
+		}
 	}
 
 	    
@@ -46,7 +59,16 @@ public class MyArrayList implements MyList {
 	//returns the index of the given object, return -1 if the Object doesn't exist or is null
 
 	public int indexOf(Object o){
-		
+		int check = 0;
+		while (check <+ Stuff.length-1){
+			if (Stuff[check] == o){
+				return check;
+			}
+			else{
+				check ++;
+			}
+		}
+		return -1;
 	}
 
 	   
@@ -54,7 +76,16 @@ public class MyArrayList implements MyList {
 	//returns true if the list is empty, false if otherwise
 
 	public boolean isEmpty(){
-		
+		int check = 0;
+		while (check <+ Stuff.length-1){
+			if (Stuff[check] != null){
+				return false;
+			}
+			else{
+				check ++;
+			}
+		}
+		return true;
 	}
 
 	    
