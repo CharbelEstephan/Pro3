@@ -2,10 +2,25 @@ package p1;
 public class MyArrayList implements MyList {
 	//Fields
 	private Object[] Stuff;
+	private int addIterator=-1;
+	private int ptr = -1;
+	private int cool;
 	//Constructors
 	//Methods
+	
+	
 	public boolean add(Object o){
-		
+		if (addIterator < Stuff.length-1){
+			this.ptr++;
+			this.addIterator++;
+			
+			
+			Stuff[this.addIterator] = o;
+			cool ++;
+			return true;
+		}
+		else
+			return false;
 	}
 
     
@@ -21,7 +36,12 @@ public class MyArrayList implements MyList {
 	//clears all data from the list. in the case of the node list, set the head.next to null. in the array list, set the underlying array to a new array of size 2.
 
 	public void clear(){
-		
+		for(int i = 0; i < Stuff.length-1; i++){
+			if (Stuff[i] != null)
+				Stuff[i] = null;
+		}
+		Object[] Stuff = new  Object[2]; 
+		cool = 0;
 	}
 
 	    
@@ -94,7 +114,6 @@ public class MyArrayList implements MyList {
 
 	public Object remove(int index){
 		
-	}
 
 	    
 
@@ -125,8 +144,7 @@ public class MyArrayList implements MyList {
 	//returns the number of elements in the list
 
 	public int size(){
-		int size = Stuff.length;
-		return size;
+		return cool;
 	}
 
 }
