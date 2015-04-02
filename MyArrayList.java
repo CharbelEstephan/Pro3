@@ -6,6 +6,9 @@ public class MyArrayList implements MyList {
 	private int ptr = -1;
 	private int cool;
 	//Constructors
+	public MyArrayList(){
+		
+	}
 	//Methods
 	
 	
@@ -113,7 +116,16 @@ public class MyArrayList implements MyList {
 	//removes and returns the object at the given index
 
 	public Object remove(int index){
-		
+		if (index > Stuff.length -1 || index < 0){
+			return ("Index out o bounds, m8");
+	}
+		else{
+			Object swag = Stuff[index];
+			Stuff[index] = null;
+			cool --;
+			return swag;
+		}
+}
 
 	    
 
@@ -122,7 +134,17 @@ public class MyArrayList implements MyList {
 	//returns true if an object is successfully removed, false if otherwise
 
 	public boolean remove(Object o){
-		
+		boolean done = false;
+		int i = 0;
+		while (done = false || i < Stuff.length-1){
+			if (Stuff[i] != o)
+				i++;
+			else{
+				Stuff[i] = null;
+				done = true;
+			}
+		}
+		return done;
 	}
 
 	    
