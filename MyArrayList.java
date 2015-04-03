@@ -5,20 +5,19 @@ public class MyArrayList implements MyList {
 	private int cool;
 	//Constructors
 	public MyArrayList(){
-		
+		this.Stuff = new Object[2];
 	}
 	//Methods
 	
 	
 	public boolean add(Object o){
-		int length = Stuff.length; 
+		//int length = Stuff.length;
 		if (o == null)
 			return false;
 		else{
-			Object[] Stuff = new Object[length+1];
-			
-			
-			
+			Stuff = new Object[Stuff.length+1];
+			Stuff[Stuff.length-1] = o;
+			return true;		
 		}
 	}
 
@@ -39,7 +38,7 @@ public class MyArrayList implements MyList {
 			if (Stuff[i] != null)
 				Stuff[i] = null;
 		}
-		Object[] Stuff = new  Object[2]; 
+		this.Stuff = new  Object[2]; 
 		cool = 0;
 	}
 

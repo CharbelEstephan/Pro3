@@ -2,22 +2,25 @@ package p1;
 
 public class MyNodeList implements MyList {
 	//Instance Variables
-	public Node head = null; 
+	public Node head; 
 	 MyNodeList(){
+		 head = null;
 	}
 	/* default constructor that creates an empty list of Node objects that has a header node only; 
 	*/
 	public boolean add(Object o){
-		Node swagger = head;
-		if(!swagger.hasNext()){
-			swagger.setData(o);
+		if (o == null)
+			return false;
+		if (head == null){
+			head = new Node(o, null);
+			return true;
+		}
+		if (head.getNext() == null){
+			head.setNext(new Node(o,null));
 			return true;
 		}
 		else{
-		if (o == null)
-			return false;
-		else{
-			//Node swagger = head;
+			Node swagger = head;
 			while(swagger.hasNext()){
 			swagger = swagger.getNext();
 			}
@@ -26,7 +29,6 @@ public class MyNodeList implements MyList {
 			return true;
 		}
 		}
-	}
 	public boolean insert(int index, Object o){
 		return true;
 	}
@@ -68,6 +70,9 @@ public class MyNodeList implements MyList {
 
 	public int indexOf(Object o){
 		if (o == null){
+			return -1;
+		}
+		else if (isEmpty()){
 			return -1;
 		}
 		else{
