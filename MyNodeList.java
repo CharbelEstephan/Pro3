@@ -4,24 +4,27 @@ public class MyNodeList implements MyList {
 	//Instance Variables
 	public Node head = null; 
 	 MyNodeList(){
-		
 	}
-	MyNodeList(Node s){
-		this.head = s;
 	/* default constructor that creates an empty list of Node objects that has a header node only; 
 	*/
-}
 	public boolean add(Object o){
+		Node swagger = head;
+		if(!swagger.hasNext()){
+			swagger.setData(o);
+			return true;
+		}
+		else{
 		if (o == null)
 			return false;
 		else{
-			Node swagger = head;
+			//Node swagger = head;
 			while(swagger.hasNext()){
 			swagger = swagger.getNext();
 			}
 			
 			swagger.setData(o);
 			return true;
+		}
 		}
 	}
 	public boolean insert(int index, Object o){
@@ -156,5 +159,7 @@ public class MyNodeList implements MyList {
 		System.out.println(list.isEmpty()); //Prints false
 
 		System.out.println(list.get(3)); // Prints String4
+		
+		list.size();
 	}
 }

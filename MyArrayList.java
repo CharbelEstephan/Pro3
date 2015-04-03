@@ -2,8 +2,6 @@ package p1;
 public class MyArrayList implements MyList {
 	//Fields
 	private Object[] Stuff;
-	private int addIterator=-1;
-	private int ptr = -1;
 	private int cool;
 	//Constructors
 	public MyArrayList(){
@@ -13,17 +11,15 @@ public class MyArrayList implements MyList {
 	
 	
 	public boolean add(Object o){
-		if (addIterator < Stuff.length-1){
-			this.ptr++;
-			this.addIterator++;
-			
-			
-			Stuff[this.addIterator] = o;
-			cool ++;
-			return true;
-		}
-		else
+		int length = Stuff.length; 
+		if (o == null)
 			return false;
+		else{
+			Object[] Stuff = new Object[length+1];
+			
+			
+			
+		}
 	}
 
     
@@ -167,6 +163,24 @@ public class MyArrayList implements MyList {
 
 	public int size(){
 		return cool;
+	}
+	public static void main(String args[]){
+		MyArrayList list = new MyArrayList();
+		list.add("String1");
+
+		list.add("String2");
+
+		//list.insert(2, "String3");
+
+		list.add("String4");
+
+		//ArrayList: [String1, String2, String3, String4]
+
+		System.out.println(list.indexOf("String2")); // Prints 1
+
+		System.out.println(list.isEmpty()); //Prints false
+
+		System.out.println(list.get(3)); // Prints String4
 	}
 
 }
