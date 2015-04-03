@@ -31,7 +31,7 @@ public class MyArrayList implements MyList {
 	//inserts the given object at the given index in the list, for a list of size n you should be able to insert an object from indices 0-n. i.e. before, in, and immediately after the list. the list will grow if needed. If the index is negative or n+1 or greater, the method should return false. if the object inputted into the method is null, it should also return false.
 
 	public boolean insert(int index, Object o){
-		
+		return true;
 	}
 
 	    
